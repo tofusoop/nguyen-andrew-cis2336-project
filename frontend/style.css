@@ -201,14 +201,21 @@ main section h2:hover {
 
 /*Footer*/
 
+/*Footer*/
+
 footer {
     background-color: #3458a7;
     color: white;
     text-align: center;
     padding: 15px;
     margin-top: 30px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
-
 
 /*Mobile Support*/
 
