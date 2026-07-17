@@ -82,15 +82,33 @@ h3 {
 
 
 /*Gallery Cards*/
-
+/* Gallery Container - Puts Sidebar & Grid side-by-side */
 #gallery {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    align-items: flex-start;
+    gap: 30px; /* Space between sidebar and card grid */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
+/* Sidebar Controls Panel */
+#controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 250px; /* Matches card width for visual symmetry */
+}
 
+/* New Grid Wrapper - Strict 3-Column Layout */
+#gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 250px); /* Forces exactly 3 columns */
+    gap: 20px; /* Consistent spacing between all cards */
+}
+
+/* Gallery Cards */
 .art-card {
     background-color: white;
     width: 250px;
@@ -98,8 +116,8 @@ h3 {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0px 3px 8px rgba(0,0,0,0.15);
+    height: fit-content; /* Stops shorter cards from stretching weirdly */
 }
-
 
 .art-card img {
     width: 100%;
@@ -108,12 +126,6 @@ h3 {
     border-radius: 8px;
     cursor: pointer;
 }
-
-
-.art-card img:hover {
-    opacity: 0.8;
-}
-
 
 /*Buttons*/
 
