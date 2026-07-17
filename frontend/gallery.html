@@ -21,9 +21,10 @@
 
 
 !--issue with sort function, double check with images--!
-    <section id="gallery">
-        <div id="controls">
+<section id="gallery">
 
+    <!-- 1. Left Side: Controls (Outside of the grid!) -->
+    <div id="controls">
         <button onclick="filterArt('all')">All</button>
         <button onclick="filterArt('Painting')">Painting</button>
         <button onclick="filterArt('Digital')">Digital</button>
@@ -36,14 +37,16 @@
             <option value="title">Title</option>
             <option value="price">Price</option>
         </select>
-        </div>
+    </div>
 
-       <div class="art-card" data-category="Sculpture">
-        <img src="images/artwork1.jpg" alt="Artwork 1" onclick="enlargeImage(this); event.stopPropagation()">
-        <h3>Artwork Title 1</h3>
-        <p class="category">Sculpture</p>
-        <p class="price">Price: Not for Sale</p>
-        <p class="artist">By Artist Name 1</p>
+    <!-- 2. Right Side: The Grid Wrapper (This is what keeps the 3x2 layout aligned) -->
+    <div id="gallery-grid">
+        <div class="art-card" data-category="Sculpture">
+            <img src="images/artwork1.jpg" alt="Artwork 1" onclick="enlargeImage(this); event.stopPropagation()">
+            <h3>Artwork Title 1</h3>
+            <p class="category">Sculpture</p>
+            <p class="price">Price: Not for Sale</p>
+            <p class="artist">By Artist Name 1</p>
         </div>
 
         <div class="art-card" data-category="Painting">
@@ -85,9 +88,9 @@
             <p>By Artist Name 6</p>
             <p>Price: $300</p>
         </div>
-    </section>
+    </div>
 
-
+</section>
 
 
     <footer>
