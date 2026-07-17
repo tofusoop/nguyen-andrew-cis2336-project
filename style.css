@@ -1,4 +1,4 @@
-/* ---------- General Page Styling ---------- */
+/*General Page Styling*/
 
 * {
     box-sizing: border-box;
@@ -12,10 +12,10 @@ body {
 }
 
 
-/* ---------- Header ---------- */
+/*Header*/
 
 header {
-    background-color: #222;
+    background-color: #304ed6;
     color: white;
     text-align: center;
     padding: 25px;
@@ -27,10 +27,10 @@ header h1 {
 }
 
 
-/* ---------- Navigation ---------- */
+/*Navigation*/
 
 #main_nav {
-    background-color: #444;
+    background-color: #3458a7;
     display: flex;
     justify-content: center;
     gap: 25px;
@@ -46,12 +46,12 @@ header h1 {
 }
 
 #main_nav a:hover {
-    background-color: #f0c419;
+    background-color: #4fcde4;
     color: black;
 }
 
 
-/* ---------- Main Content ---------- */
+/* Main Content*/
 
 main {
     width: 85%;
@@ -59,7 +59,7 @@ main {
 }
 
 
-/* ---------- Sections ---------- */
+/*Sections*/
 
 section {
     background-color: white;
@@ -70,7 +70,7 @@ section {
 }
 
 
-/* ---------- Headings ---------- */
+/*Headings*/
 
 h2 {
     color: #222;
@@ -81,7 +81,7 @@ h3 {
 }
 
 
-/* ---------- Gallery Cards ---------- */
+/*Gallery Cards*/
 
 #gallery {
     display: flex;
@@ -115,10 +115,10 @@ h3 {
 }
 
 
-/* ---------- Buttons ---------- */
+/*Buttons*/
 
 button {
-    background-color: #222;
+    background-color: #3458a7;
     color: white;
     border: none;
     padding: 10px 18px;
@@ -127,12 +127,12 @@ button {
 }
 
 button:hover {
-    background-color: #f0c419;
+    background-color: #4fcde4;
     color: black;
 }
 
 
-/* ---------- Forms ---------- */
+/*Forms*/
 
 input,
 textarea,
@@ -153,7 +153,7 @@ form {
 }
 
 
-/* ---------- FAQ ---------- */
+/*FAQ*/
 
 main section p {
     display: none;
@@ -164,11 +164,11 @@ main section h2 {
 }
 
 main section h2:hover {
-    color: #f0c419;
+    color: #4fcde4;
 }
 
 
-/* ---------- Events ---------- */
+/*Events*/
 
 .event-card {
     background-color: white;
@@ -179,10 +179,10 @@ main section h2:hover {
 }
 
 
-/* ---------- Footer ---------- */
+/*Footer*/
 
 footer {
-    background-color: #222;
+    background-color: #3458a7;
     color: white;
     text-align: center;
     padding: 15px;
@@ -190,7 +190,7 @@ footer {
 }
 
 
-/* ---------- Mobile Support ---------- */
+/*Mobile Support*/
 
 @media screen and (max-width: 700px) {
 
