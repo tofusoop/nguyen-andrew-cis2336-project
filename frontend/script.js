@@ -68,25 +68,25 @@ function getPrice(card) {
         return 999999; // Sends unpriced items to the very end of the list
     }
 
-    // 3. Extract only the digits following the dollar sign
+    
     let match = text.match(/\$(\d+)/);
     if (match) {
         return Number(match[1]);
     }
     
-    return 0; // Default fallback if no price is found
+    return 0; 
 }
+
+
 // Display artwork details dynamically
 let cards = document.querySelectorAll(".art-card");
 cards.forEach(function(card){
     card.addEventListener("click", function(event){
-        // If they clicked the actual image, stop here so the alert doesn't show up!
         if (event.target.tagName === "IMG") return;
 
         let title = card.querySelector("h3").innerText;
         let artist = card.querySelector(".artist");
         
-        // Handle fallback if an artwork doesn't have a class="artist" paragraph
         let artistText = artist ? artist.innerText : card.querySelectorAll("p")[1]?.innerText || "Unknown";
 
         alert(
@@ -101,7 +101,6 @@ cards.forEach(function(card){
 let events = document.querySelectorAll(".event-card");
 events.forEach(function(eventCard) {
     eventCard.addEventListener("click", function(e) {
-        // If they clicked the actual image, stop here so the alert doesn't step on the lightbox!
         if (e.target.tagName === "IMG") return;
 
         let title = eventCard.querySelector("h3").innerText;
@@ -111,7 +110,6 @@ events.forEach(function(eventCard) {
         let date = "Date: Not Specified";
         let location = "Location: Not Specified";
 
-        // Dynamically find the right paragraphs by checking their text content
         paragraphs.forEach(function(p) {
             let text = p.innerText;
             if (text.startsWith("Date:")) {
@@ -119,7 +117,7 @@ events.forEach(function(eventCard) {
             } else if (text.startsWith("Location:")) {
                 location = text;
             } else {
-                description = text; // If it's neither, it's our description paragraph!
+                description = text; 
             }
         });
 
@@ -133,15 +131,12 @@ events.forEach(function(eventCard) {
 });
 
 
-// Image enlargement Lightbox (FIXED: Swapped toggle with full-screen popup)
+// Image enlargement Lightbox 
 function enlargeImage(clickedImage) {
     const lightbox = document.getElementById('gallery-lightbox');
     const lightboxImg = document.getElementById('lightbox-target-img');
     
-    // Set the source of the hidden large image overlay to the clicked picture
     lightboxImg.src = clickedImage.src;
-    
-    // Unhide the lightbox overlay wrapper
     lightbox.style.display = 'flex';
 }
 
@@ -175,21 +170,16 @@ function searchArt(){
 
 // FAQ toggle functionality
 document.addEventListener("DOMContentLoaded", function () {
-    // TIP: Target a class like '.faq-question' or container to prevent breaking other h2s on your site
     let questions = document.querySelectorAll(".faq-question, #faq h2");
-    
-    // Fallback to regular h2 if you haven't changed your HTML classes yet
     if (questions.length === 0) {
         questions = document.querySelectorAll("h2");
     }
 
     questions.forEach(function(question) {
         question.style.cursor = "pointer"; // Makes it obvious to users they can click it!
-        
         question.addEventListener("click", function() {
             let answer = question.nextElementSibling;
             if (!answer) return;
-
             if (answer.style.display === "block") {
                 answer.style.display = "none";
             } else {
@@ -204,13 +194,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const submitForm = document.getElementById("artSubmitForm");
     if (submitForm) {
         submitForm.addEventListener("submit", function(event) {
-            event.preventDefault(); // Stops the browser from trying to open submit_art.php
+            event.preventDefault(); 
             
-            // Grab the artwork title safely
             let titleInput = document.getElementById("title")?.value || "Your artwork";
-            
             alert("Success! '" + titleInput + "' has been submitted for review.");
-            submitForm.reset(); // Clears the form inputs cleanly
+            submitForm.reset(); 
         });
     }
 });
