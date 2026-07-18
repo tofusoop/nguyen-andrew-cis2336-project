@@ -79,23 +79,31 @@ function getPrice(card) {
 // Display artwork details dynamically
 let cards = document.querySelectorAll(".art-card");
 cards.forEach(function(card){
-    card.addEventListener("click", function(){
+    card.addEventListener("click", function(event){
+        // If they clicked the actual image, stop here so the alert doesn't show up!
+        if (event.target.tagName === "IMG") return;
+
         let title = card.querySelector("h3").innerText;
         let artist = card.querySelector(".artist");
-        if (artist) {
-            alert(
-                "Artwork: " + title +
-                "\nArtist: " + artist.innerText +
-                "\nCategory: " + card.dataset.category
-            );
-        }
+        
+        // Handle fallback if an artwork doesn't have a class="artist" paragraph
+        let artistText = artist ? artist.innerText : card.querySelectorAll("p")[1]?.innerText || "Unknown";
+
+        alert(
+            "Artwork: " + title +
+            "\n" + artistText +
+            "\nCategory: " + card.dataset.category
+        );
     });
 });
 
 // Display event details dynamically
 let events = document.querySelectorAll(".event-card");
 events.forEach(function(event){
-    event.addEventListener("click", function(){
+    event.addEventListener("click", function(event){
+        // If they clicked the actual image, stop here so the alert doesn't show up!
+        if (event.target.tagName === "IMG") return;
+
         let title = event.querySelector("h3").innerText;
         let description = event.querySelectorAll("p")[0].innerText;
         let date = event.querySelectorAll("p")[1].innerText;
@@ -110,15 +118,25 @@ events.forEach(function(event){
 });
 
 
-// Image enlargement
-function enlargeImage(image){
-    if(image.style.width === "500px"){
-        image.style.width = "200px";
-    } else {
-        image.style.width = "500px";
-    }
+// Image enlargement Lightbox (FIXED: Swapped toggle with full-screen popup)
+function enlargeImage(clickedImage) {
+    const lightbox = document.getElementById('gallery-lightbox');
+    const lightboxImg = document.getElementById('lightbox-target-img');
+    
+    // Set the source of the hidden large image overlay to the clicked picture
+    lightboxImg.src = clickedImage.src;
+    
+    // Unhide the lightbox overlay wrapper
+    lightbox.style.display = 'flex';
 }
 
+// Close the full-screen lightbox image
+function closeImage() {
+    const lightbox = document.getElementById('gallery-lightbox');
+    if (lightbox) {
+        lightbox.style.display = 'none';
+    }
+}
 
 // Search functionality
 function searchArt(){

@@ -41,51 +41,51 @@
     <!-- Right Side: The Grid Wrapper -->
     <div id="gallery-grid">
         <div class="art-card" data-category="Sculpture">
-            <img src="images/artwork1.jpg" alt="Artwork 1" onclick="enlargeImage(this); event.stopPropagation()">
-            <h3>Artwork Title 1</h3>
+            <img src="images/artwork1.jpg" alt="Celestial" onclick="enlargeImage(this); event.stopPropagation()">
+            <h3>Celestial</h3>
             <p class="category">Sculpture</p>
             <p class="price">Price: Not for Sale</p>
-            <p class="artist">By Artist Name 1</p>
+            <p class="artist">By N Tuan</p>
         </div>
 
         <div class="art-card" data-category="Painting">
-            <img src="images/artwork2.jpg" alt="Artwork 2" onclick="enlargeImage(this); event.stopPropagation()">
-            <h3>Artwork Title 2</h3>
+            <img src="images/artwork2.jpg" alt="Alpine Followers" onclick="enlargeImage(this); event.stopPropagation()">
+            <h3>Alpine Followers</h3>
             <p class="category">Painting</p>
             <p class="price">Price: $100</p>
-            <p class="artist">By Artist Name 2</p>
+            <p class="artist">By Crystal DiPietro</p>
         </div>
 
         <div class="art-card" data-category="Digital">
-            <img src="images/artwork3.jpg" alt="Artwork 3" onclick="enlargeImage(this); event.stopPropagation()">
-            <h3>Artwork Title 3</h3>
+            <img src="images/artwork3.jpg" alt="Coppergold" onclick="enlargeImage(this); event.stopPropagation()">
+            <h3>Coppergold</h3>
             <p class="category">Digital</p>
-            <p class="artist">By Artist Name 3</p>
+            <p class="artist">By Andrew Morris</p>
             <p class="price">Price: $150</p>
         </div>
 
         <div class="art-card" data-category="Sculpture">
-            <img src="images/artwork4.jpg" alt="Artwork 4" onclick="enlargeImage(this); event.stopPropagation()">
-            <h3>Artwork Title 4</h3>
+            <img src="images/artwork4.jpg" alt="Silent Dance" onclick="enlargeImage(this); event.stopPropagation()">
+            <h3>Silent Dance</h3>
             <p class="category">Sculpture</p>
-            <p class="artist">By Artist Name 4</p>
+            <p class="artist">By Lina P.</p>
             <p class="price">Price: $200</p>
         </div>
 
         <div class="art-card" data-category="Painting">
-            <img src="images/artwork5.jpg" alt="Artwork 5" onclick="enlargeImage(this); event.stopPropagation()">
-            <h3>Artwork Title 5</h3>
+            <img src="images/artwork5.jpg" alt="Three Trees on a Hill" onclick="enlargeImage(this); event.stopPropagation()">
+            <h3>Three Trees on a Hill</h3>
             <p class="category">Painting</p>
-            <p class="artist">By Artist Name 5</p>
+            <p class="artist">By Jennifer Lommers</p>
             <p class="price">Price: $250</p>
         </div>
 
         <div class="art-card" data-category="Digital">
-            <img src="images/artwork6.jpg" alt="Artwork 6" onclick="enlargeImage(this); event.stopPropagation()">
-            <h3>Artwork Title 6</h3>
-            <p>Digital</p>
-            <p>By Artist Name 6</p>
-            <p>Price: $300</p>
+            <img src="images/artwork6.jpg" alt="The Inevitable Conclusion" onclick="enlargeImage(this); event.stopPropagation()">
+            <h3>The Inevitable Conclusion</h3>
+            <p class="category">Digital</p>
+            <p class="artist">By Steve Moors</p>
+            <p class="price">Price: $300</p>
         </div>
     </div>
 
@@ -93,8 +93,10 @@
 
 
     <footer>
-        <p>&copy; 2024 Art Connect. All rights reserved.</p>
-    </footer>
+        <p>&copy; 2024 Art Connect. All rights reserved.</p></footer>
+    <div id="gallery-lightbox" style="display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; cursor: pointer;" onclick="closeImage()">
+        <img id="lightbox-target-img" src="" style="max-width: 90%; max-height: 85%; object-fit: contain; border-radius: 4px; box-shadow: 0 4px 25px rgba(0,0,0,0.6);">
+    </div>   
     <script src="script.js"></script>
 </body>
 
