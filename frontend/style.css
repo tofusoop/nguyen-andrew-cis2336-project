@@ -1,9 +1,7 @@
 /*General Page Styling*/
-
 * {
     box-sizing: border-box;
 }
-
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -13,14 +11,12 @@ body {
 
 
 /*Header*/
-
 header {
     background-color: #304ed6;
     color: white;
     text-align: center;
     padding: 25px;
 }
-
 header h1 {
     margin: 0;
     font-size: 36px;
@@ -28,7 +24,6 @@ header h1 {
 
 
 /*Navigation*/
-
 #main_nav {
     background-color: #3458a7;
     display: flex;
@@ -36,7 +31,6 @@ header h1 {
     gap: 25px;
     padding: 15px;
 }
-
 #main_nav a {
     color: white;
     text-decoration: none;
@@ -44,7 +38,6 @@ header h1 {
     padding: 8px 15px;
     border-radius: 5px;
 }
-
 #main_nav a:hover {
     background-color: #4fcde4;
     color: black;
@@ -52,7 +45,6 @@ header h1 {
 
 
 /* Main Content*/
-
 main {
     width: 85%;
     margin: 30px auto;
@@ -60,7 +52,6 @@ main {
 
 
 /*Sections*/
-
 section {
     background-color: white;
     padding: 20px;
@@ -71,7 +62,6 @@ section {
 
 
 /*Headings*/
-
 h2 {
     color: #222;
 }
@@ -82,7 +72,6 @@ h3 {
 
 
 /*Gallery Section & Grid*/
-
 /* Puts the #controls sidebar on the left and the #gallery-grid on the right */
 #gallery {
     display: flex;
@@ -94,6 +83,7 @@ h3 {
     padding: 20px;
 }
 
+
 /* Forces the sidebar to stay a consistent width */
 #controls {
     display: flex;
@@ -102,6 +92,7 @@ h3 {
     width: 250px;
     flex-shrink: 0;
 }
+
 
 /* Strict 3-column grid layout for the cards only */
 #gallery-grid {
@@ -120,7 +111,6 @@ h3 {
     height: fit-content;
 }
 
-
 .art-card img {
     width: 100%;
     height: 220px;
@@ -129,14 +119,12 @@ h3 {
     cursor: pointer;
 }
 
-
 .art-card img:hover {
     opacity: 0.8;
 }
 
 
 /*Buttons*/
-
 button {
     background-color: #3458a7;
     color: white;
@@ -153,7 +141,6 @@ button:hover {
 
 
 /*Forms*/
-
 input,
 textarea,
 select {
@@ -164,7 +151,6 @@ select {
     border-radius: 5px;
 }
 
-
 form {
     background-color: white;
     padding: 25px;
@@ -174,22 +160,18 @@ form {
 
 
 /*FAQ*/
-
 main section p {
     display: none;
 }
-
 main section h2 {
     cursor: pointer;
 }
-
 main section h2:hover {
     color: #4fcde4;
 }
 
 
 /*Events*/
-
 .event-card {
     background-color: white;
     padding: 20px;
@@ -200,9 +182,6 @@ main section h2:hover {
 
 
 /*Footer*/
-
-/*Footer*/
-
 footer {
     background-color: #3458a7;
     color: white;
@@ -217,8 +196,8 @@ footer {
     margin-right: -50vw;
 }
 
-/*Mobile Support*/
 
+/*Mobile Support*/
 @media screen and (max-width: 700px) {
 
     #main_nav {

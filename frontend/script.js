@@ -99,18 +99,33 @@ cards.forEach(function(card){
 
 // Display event details dynamically
 let events = document.querySelectorAll(".event-card");
-events.forEach(function(event){
-    event.addEventListener("click", function(event){
-        // If they clicked the actual image, stop here so the alert doesn't show up!
-        if (event.target.tagName === "IMG") return;
+events.forEach(function(eventCard) {
+    eventCard.addEventListener("click", function(e) {
+        // If they clicked the actual image, stop here so the alert doesn't step on the lightbox!
+        if (e.target.tagName === "IMG") return;
 
-        let title = event.querySelector("h3").innerText;
-        let description = event.querySelectorAll("p")[0].innerText;
-        let date = event.querySelectorAll("p")[1].innerText;
-        let location = event.querySelectorAll("p")[2].innerText;
+        let title = eventCard.querySelector("h3").innerText;
+        let paragraphs = eventCard.querySelectorAll("p");
+        
+        let description = "";
+        let date = "Date: Not Specified";
+        let location = "Location: Not Specified";
+
+        // Dynamically find the right paragraphs by checking their text content
+        paragraphs.forEach(function(p) {
+            let text = p.innerText;
+            if (text.startsWith("Date:")) {
+                date = text;
+            } else if (text.startsWith("Location:")) {
+                location = text;
+            } else {
+                description = text; // If it's neither, it's our description paragraph!
+            }
+        });
+
         alert(
             "Event: " + title +
-            "\n" + description +
+            "\n\nDescription: " + description +
             "\n" + date +
             "\n" + location
         );
@@ -144,15 +159,11 @@ function searchArt(){
         .getElementById("searchInput")
         .value
         .toLowerCase();
-
     let artworks = document.querySelectorAll(".art-card");
-
     artworks.forEach(function(art){
-
         let title = art.querySelector("h3")
             .innerText
             .toLowerCase();
-
         if(title.includes(input)){
             art.style.display = "block";
         } else {
@@ -164,23 +175,15 @@ function searchArt(){
 
 // FAQ toggle functionality
 document.addEventListener("DOMContentLoaded", function () {
-
     let questions = document.querySelectorAll("h2");
-
     questions.forEach(function(question) {
-
         question.addEventListener("click", function() {
-
             let answer = question.nextElementSibling;
-
             if (answer.style.display === "block") {
                 answer.style.display = "none";
             } else {
                 answer.style.display = "block";
             }
-
         });
-
     });
-
 });
