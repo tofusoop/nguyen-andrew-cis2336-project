@@ -20,10 +20,9 @@
     </nav>
 
 
-!--issue with sort function, double check with images--!
 <section id="gallery">
 
-    <!-- 1. Left Side: Controls (Outside of the grid!) -->
+    <!-- Left Side: Controls (Outside of the grid) -->
     <div id="controls">
         <button onclick="filterArt('all')">All</button>
         <button onclick="filterArt('Painting')">Painting</button>
@@ -39,7 +38,7 @@
         </select>
     </div>
 
-    <!-- 2. Right Side: The Grid Wrapper (This is what keeps the 3x2 layout aligned) -->
+    <!-- Right Side: The Grid Wrapper -->
     <div id="gallery-grid">
         <div class="art-card" data-category="Sculpture">
             <img src="images/artwork1.jpg" alt="Artwork 1" onclick="enlargeImage(this); event.stopPropagation()">
