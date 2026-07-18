@@ -175,10 +175,21 @@ function searchArt(){
 
 // FAQ toggle functionality
 document.addEventListener("DOMContentLoaded", function () {
-    let questions = document.querySelectorAll("h2");
+    // TIP: Target a class like '.faq-question' or container to prevent breaking other h2s on your site
+    let questions = document.querySelectorAll(".faq-question, #faq h2");
+    
+    // Fallback to regular h2 if you haven't changed your HTML classes yet
+    if (questions.length === 0) {
+        questions = document.querySelectorAll("h2");
+    }
+
     questions.forEach(function(question) {
+        question.style.cursor = "pointer"; // Makes it obvious to users they can click it!
+        
         question.addEventListener("click", function() {
             let answer = question.nextElementSibling;
+            if (!answer) return;
+
             if (answer.style.display === "block") {
                 answer.style.display = "none";
             } else {
@@ -186,4 +197,20 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+});
+
+// Art Submission Form Handling
+document.addEventListener("DOMContentLoaded", function () {
+    const submitForm = document.getElementById("artSubmitForm");
+    if (submitForm) {
+        submitForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Stops the browser from trying to open submit_art.php
+            
+            // Grab the artwork title safely
+            let titleInput = document.getElementById("title")?.value || "Your artwork";
+            
+            alert("Success! '" + titleInput + "' has been submitted for review.");
+            submitForm.reset(); // Clears the form inputs cleanly
+        });
+    }
 });
