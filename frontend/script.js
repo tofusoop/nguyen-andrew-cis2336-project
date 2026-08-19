@@ -196,9 +196,65 @@ document.addEventListener("DOMContentLoaded", function () {
     if (submitForm) {
         submitForm.addEventListener("submit", async function(event) {
             event.preventDefault(); 
+
+            document.querySelectorAll(".error-message").forEach(el => el.textContent = "");
+
+            let isValid = true;
+
+    
+            const title = document.getElementById("title")?.value.trim();
+            if (!title) {
+                document.getElementById("titleError").textContent = "Please enter an artwork title.";
+                isValid = false;
+            }
+
+            const artist = document.getElementById("artist")?.value.trim();
+            if (!artist) {
+                document.getElementById("artistError").textContent = "Please enter the artist name.";
+                isValid = false;
+            }
+
+   
+            const email = document.getElementById("artistemail")?.value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailPattern.test(email)) {
+                document.getElementById("emailError").textContent = "Please enter a valid email address.";
+                isValid = false;
+            }
+
+       
+            const category = document.getElementById("category")?.value;
+            if (!category) {
+                document.getElementById("categoryError").textContent = "Please select a category.";
+                isValid = false;
+            }
+
+    
+            const priceVal = document.getElementById("price")?.value;
+            const price = parseFloat(priceVal);
+            if (priceVal === "" || isNaN(price) || price < 0) {
+                document.getElementById("priceError").textContent = "Please enter a valid price (0 or higher).";
+                isValid = false;
+            }
+
+    
+            const description = document.getElementById("description")?.value.trim();
+            if (!description) {
+                document.getElementById("descriptionError").textContent = "Please provide a description.";
+                isValid = false;
+            }
+
+            const imageInput = document.getElementById("image");
+            if (!imageInput || imageInput.files.length === 0) {
+                document.getElementById("imageError").textContent = "Please select an image file to upload.";
+                isValid = false;
+            }
+
+    
+            if (!isValid) return;
+
             const formData = new FormData(submitForm);
             
-
             try {
                 const response = await fetch('/api/artworks', {
                     method: 'POST',
