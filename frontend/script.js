@@ -192,13 +192,29 @@ document.addEventListener("DOMContentLoaded", function () {
 // Art Submission Form Handling
 document.addEventListener("DOMContentLoaded", function () {
     const submitForm = document.getElementById("artSubmitForm");
+    
     if (submitForm) {
-        submitForm.addEventListener("submit", function(event) {
+        // Notice the word 'async' added here so we can wait for the server response
+        submitForm.addEventListener("submit", async function(event) {
             event.preventDefault(); 
-            
-            let titleInput = document.getElementById("title")?.value || "Your artwork";
-            alert("Success! '" + titleInput + "' has been submitted for review.");
-            submitForm.reset(); 
+            const formData = new FormData(submitForm);
+
+            try {
+                const response = await fetch('/api/artworks', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                if (result.success) {
+                    alert(result.message); 
+                    submitForm.reset(); 
+                } else {
+                    alert("Error: " + result.message);
+                }
+            } catch (error) {
+                console.error("Error submitting artwork:", error);
+                alert("Failed to connect to the server. Make sure your Node server is running!");
+            }
         });
     }
 });
