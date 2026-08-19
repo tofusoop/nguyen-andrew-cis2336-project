@@ -23,23 +23,20 @@ Architecture
 ArtConnect
 │
 ├── frontend/
-│   ├── index.html            # Home
-│   │
-│   ├── css/
-│   │   └── style.css         # Main stylesheet
-│   │
-│   ├── js/
-│   │   └── script.js         # Functions (interaction, filtering,, lightbox Script)
-│   │
-│   ├── images/               # Media (logos, artwork, banners)
-│   │
-│   └── pages/                # Supplemental Web Pages
-│       ├── gallery.html      # Art Showcase Grid & Sorting Portal
-│       ├── events.html       # Event page
-│       ├── artSubmit.html    # Art Submission Form
-│       ├── FAQ.html          # FAQ accordion
-│       └── references.html   # Media Citation & Reference
+│   ├── images/             # Media (logos, artwork, banners)
+│   ├── artSubmit.html      # Art Submission Form
+│   ├── events.html         # Event page
+│   ├── FAQ.html            # FAQ accordion
+│   ├── gallery.html        # Art Showcase Grid & Sorting Portal
+│   ├── index.html          # Home
+│   ├── references.html     # Media Citation & Reference
+│   ├── script.js           # Functions (interaction, filtering,, lightbox Script)
+│   ├── style.css           # Main stylesheet
+│   └── README.md           # Project Documentation
 │
-├── backend/                  # Backend Files Repository
-│
-└── README.md                 # Project Documentation
+└── backend/                # Backend Files Repository
+    ├── node_modules/       # Node.js modules & packages
+    ├── uploads/            # Uploaded artwork images
+    ├── package-lock.json   # Lock file for package dependencies
+    ├── package.json        # Project metadata and dependencies
+    └── server.js           # Main Express server code
