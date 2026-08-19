@@ -34,6 +34,8 @@ app.get('/api/artworks', (req, res) => {
 
 
 app.post('/api/artworks', upload.single('image'), (req, res) => {
+  console.log("Received submission body:", req.body);
+  console.log("Received file:", req.file);
   try {
     const { title,artist,artistemail,category,price,description } = req.body;
     if (!title || !artist || !artistemail || !category || !price || !description) {
@@ -67,3 +69,5 @@ app.post('/api/artworks', upload.single('image'), (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
+
