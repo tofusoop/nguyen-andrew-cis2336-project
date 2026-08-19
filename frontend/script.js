@@ -194,7 +194,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const submitForm = document.getElementById("artSubmitForm");
     
     if (submitForm) {
-        // Notice the word 'async' added here so we can wait for the server response
         submitForm.addEventListener("submit", async function(event) {
             event.preventDefault(); 
             const formData = new FormData(submitForm);
